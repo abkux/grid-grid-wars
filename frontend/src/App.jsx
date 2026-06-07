@@ -18,7 +18,7 @@ function App() {
   // Verify token on app load to ensure its valid.
   useEffect(() => {
     if (!token) return;
-    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3001'}/api/me`, {
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3001'}/api/auth/me`, {
       headers: { Authorization: `Bearer ${token}` }
     }).then((res) => {
       if (!res.ok) logout();
